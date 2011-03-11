@@ -1,7 +1,7 @@
 ZODB: A Python Persistence System
 =================================
 
-:Authors: Chris McDonough
+:Authors: Chris McDonough, Agendaless Consulting
 :Date: 3/11/2011
 
 What Is ZODB?
@@ -22,7 +22,9 @@ The Pickle Module
 -----------------
 
 ``pickle`` is a module for serializing Python object state to files.  A
-pickleable object::
+pickleable object:
+
+.. sourcecode:: python
 
     class Conference(object):
         def __init__(self, name, year):
@@ -34,7 +36,7 @@ pickleable object::
 Writing Data to a Pickle File
 -----------------------------
 
-::
+.. sourcecode:: python
 
     from pickle import dump
     pycon = Conference('pycon', 2011)
@@ -45,7 +47,7 @@ Writing Data to a Pickle File
 Reading Data from a Pickle File
 -------------------------------
 
-::
+.. sourcecode:: python
 
     from pickle import load
     f = open('data.pck', 'rb')
@@ -55,7 +57,7 @@ Reading Data from a Pickle File
 Modifying Data in A Pickle File
 -------------------------------
 
-::
+.. sourcecode:: python
 
     from pickle import load, dump
     f = open('data.pck', 'rb')
@@ -134,7 +136,7 @@ ZODB Features Beyond Pickle
 Declaring a Persistent Object
 -----------------------------
 
-::
+.. sourcecode:: python
 
     from persistent import Persistent
 
@@ -148,7 +150,7 @@ Declaring a Persistent Object
 Writing Data to a ZODB
 ----------------------
 
-::
+.. sourcecode:: python
 
     import transaction
     from ZODB.FileStorage import FileStorage
@@ -165,7 +167,7 @@ Writing Data to a ZODB
 Reading Data from a ZODB
 ------------------------
 
-::
+.. sourcecode:: python
 
     from ZODB.FileStorage import FileStorage
     from ZODB.DB import DB
@@ -179,7 +181,7 @@ Reading Data from a ZODB
 Modifying ZODB Data
 -------------------
 
-::
+.. sourcecode:: python
 
     import transaction
     from ZODB.FileStorage import FileStorage
@@ -279,7 +281,7 @@ Folders
 Folders (cont'd)
 ----------------
 
-::
+.. sourcecode:: python
 
     from persistent import Persistent
     from repoze.folder import Folder
@@ -296,7 +298,7 @@ Folders (cont'd)
 Folders (cont'd)
 ----------------
 
-::
+.. sourcecode:: python
 
     pycon = Conference('pycon', 2011)
     folder['pycon'] = pycon
@@ -316,6 +318,8 @@ Storage Types
 
 Using Alternate Storages
 ------------------------
+
+.. sourcecode:: python
 
     import transaction
     from ZODB.MappingStorage import MappingStorage
@@ -344,7 +348,7 @@ Indexing and Searching
 Catalog Setup (Discriminators)
 ------------------------------
 
-::
+.. sourcecode:: python
 
    def get_flavor(object, default):
        return getattr(object, 'flavor', default)
@@ -355,7 +359,7 @@ Catalog Setup (Discriminators)
 Catalog Setup (cont'd)
 ----------------------
 
-::
+.. sourcecode:: python
 
    from repoze.catalog.indexes.field import \
           CatalogFieldIndex
@@ -372,7 +376,7 @@ Catalog Setup (cont'd)
 Indexing
 --------
 
-::
+.. sourcecode:: python
 
   class IceCream(object):
       def __init__(self, flavor, description):
@@ -390,7 +394,7 @@ Indexing
 Querying
 --------
 
-::
+.. sourcecode:: python
 
    from repoze.catalog.query import Eq
 

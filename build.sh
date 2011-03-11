@@ -1,2 +1,1 @@
-rst2s5.py --theme-url=ui/default zodb.rst zodb.html
-
+python rst-directive.py --theme-url=ui/pretty zodb.rst zodb.html
