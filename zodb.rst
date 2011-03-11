@@ -2,7 +2,9 @@ ZODB: A Python Persistence System
 =================================
 
 :Authors: Chris McDonough, Agendaless Consulting
-:Date: 3/11/2011
+:Date: 3/11/2011 (PyCon 2011)
+
+..  footer:: Chris McDonough, Agendaless Consulting
 
 What Is ZODB?
 -------------
